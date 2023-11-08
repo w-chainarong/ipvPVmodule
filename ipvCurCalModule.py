@@ -10,7 +10,7 @@ class ipvCurCul(object):
         self.norIsc, self.norVoc, self.norImpp,  self.norVmpp = Isc, Voc, Impp, Vmpp
         self.Ns, self.Kv, self.Ki = Ns, Kv, Ki
         self.Rs, self.Rsh, self.a = 0.0, 0.0, 0.0
-        self.SMD = None
+        self.SDM = None
     def parameter_extractionCall(self,Rs0, Rsh0, a0, **optionalArguments):    
         Rs_estimate, Rsh_estimate, a_estimate = Rs0, Rsh0, a0
         if 'iteration_arg' in optionalArguments :
@@ -31,7 +31,7 @@ class ipvCurCul(object):
     def generateIPVcurves(self):
         dgtsOfVltgDec, Params = 1, [self.Rs, self.Rsh, self.a]
         if sqrt(sum([x**2 for x in Params])) != 0.0:
-            self.SMD = SingleDiodeModel(self.norIsc, self.norVoc, self.Ns, dgtsOfVltgDec,
+            self.SDM = SingleDiodeModel(self.norIsc, self.norVoc, self.Ns, dgtsOfVltgDec,
                     temperature_current_coefficient = self.Ki, series_resistance =self.Rs, 
                     shunt_resistance = self.Rsh, diode_quality_factor = self.a) 
     def minimize_of_three_equations(self, ComptdParam):
