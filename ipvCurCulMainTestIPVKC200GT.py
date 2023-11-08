@@ -13,9 +13,9 @@ PV.generateIPVcurves()
 
 operating_temperature = 25 + 273
 actual_irradiance = 1000
-PV.SMD.calculate(operating_temperature, actual_irradiance)
-print('Saturation current Io=', PV.SMD.Io)
-V, I, P = PV.SMD.voltages, PV.SMD.currents, PV.SMD.powers
+PV.SDM.calculate(operating_temperature, actual_irradiance)
+print('Saturation current Io=', PV.SDM.Io)
+V, I, P = PV.SDM.voltages, PV.SDM.currents, PV.SDM.powers
 PV1curves = ipvPlots('Sim.Kyocera KC200GT')
 PV1curves.pviPlot(V, I, P)
 
