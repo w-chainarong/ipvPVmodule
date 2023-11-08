@@ -13,28 +13,28 @@ PV.generateIPVcurves()
 
 operating_temperature = 25 + 273
 actual_irradiance = 1000
-PV.SMD.calculate(operating_temperature, actual_irradiance)
-V, I, P = PV.SMD.voltages, PV.SMD.currents, PV.SMD.powers
-print('Saturation current Io=', PV.SMD.Io)
-print('photo current Iph=', PV.SMD.Iph)
-IV1 = [(v, i) for v, i in zip(PV.SMD.voltages, PV.SMD.currents)]
+PV.SDM.calculate(operating_temperature, actual_irradiance)
+V, I, P = PV.SDM.voltages, PV.SDM.currents, PV.SDM.powers
+print('Saturation current Io=', PV.SDM.Io)
+print('photo current Iph=', PV.SDM.Iph)
+IV1 = [(v, i) for v, i in zip(PV.SDM.voltages, PV.SDM.currents)]
 
 operating_temperature = 50 + 273
-PV.SMD.calculate(operating_temperature, actual_irradiance)
-IV2 = [(v, i) for v, i in zip(PV.SMD.voltages, PV.SMD.currents)]
+PV.SDM.calculate(operating_temperature, actual_irradiance)
+IV2 = [(v, i) for v, i in zip(PV.SDM.voltages, PV.SDM.currents)]
 
 operating_temperature = 75 + 273
-PV.SMD.calculate(operating_temperature, actual_irradiance)
-IV3 = [(v, i) for v, i in zip(PV.SMD.voltages, PV.SMD.currents)]
+PV.SDM.calculate(operating_temperature, actual_irradiance)
+IV3 = [(v, i) for v, i in zip(PV.SDM.voltages, PV.SDM.currents)]
 
 operating_temperature = 25 + 273
 actual_irradiance = 800
-PV.SMD.calculate(operating_temperature, actual_irradiance)
-IV4 = [(v, i) for v, i in zip(PV.SMD.voltages, PV.SMD.currents)]
+PV.SDM.calculate(operating_temperature, actual_irradiance)
+IV4 = [(v, i) for v, i in zip(PV.SDM.voltages, PV.SDM.currents)]
 
 actual_irradiance = 600
-PV.SMD.calculate(operating_temperature, actual_irradiance)
-IV5 = [(v, i) for v, i in zip(PV.SMD.voltages, PV.SMD.currents)]
+PV.SDM.calculate(operating_temperature, actual_irradiance)
+IV5 = [(v, i) for v, i in zip(PV.SDM.voltages, PV.SDM.currents)]
 
 
 PV1curves = ipvPlots('Sim.Kyocera KC200GT')
